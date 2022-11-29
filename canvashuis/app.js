@@ -5,38 +5,82 @@ class App
         console.log("hello world");
         //haha code go brrr
         let canvas = document.getElementById("canvasId");
-        console.log(canvas);
         let g = canvas.getContext("2d");
+        let h = canvas.getContext("2d");
         g.beginPath();
         g.fillStyle = "red";
-        g.moveTo(30, 10); 
-        g.lineTo(70, 20);
-        g.lineTo(60, 40);
-        g.lineTo(20, 30);
-        g.lineTo(30, 10);
+        g.moveTo(300, 100); 
+        g.lineTo(700, 200);
+        g.lineTo(600, 400);
+        g.lineTo(200, 300);
+        g.lineTo(300, 100);
         g.fill();
-        g.moveTo(20, 30);
-        g.lineTo(20, 50);
-        g.lineTo(60, 60);
-        g.lineTo(60, 40);
-        g.lineTo(20, 30);
-        g.moveTo(60, 60);
-        g.lineTo(80, 50);
-        g.lineTo(80, 30);
-        g.lineTo(70, 20);
-        g.lineTo(60, 40);
-        g.lineTo(80, 30);
-        g.moveTo(32.5, 40);
-        g.lineTo(32.5, 47.5);
-        g.lineTo(42.5, 50);
-        g.lineTo(42.5, 42.5);
-        g.lineTo(32.5, 40);
-        g.moveTo(32.5, 43.75)
-        g.lineTo(42.5, 46.25)
-        g.moveTo(37.5, 48.75)
-        g.lineTo(37.5, 41.25)
+        g.moveTo(200, 300);
+        g.lineTo(200, 500);
+        g.lineTo(600, 600);
+        g.lineTo(600, 400);
+        g.lineTo(200, 300);
+        g.moveTo(600, 600);
+        g.lineTo(800, 500);
+        g.lineTo(800, 300);
+        g.lineTo(700, 200);
+        g.lineTo(600, 400);
+        g.lineTo(800, 300);
+        g.moveTo(325, 400);
+        g.lineTo(325, 475);
+        g.lineTo(425, 500);
+        g.lineTo(425, 425);
+        g.lineTo(325, 400);
+        g.moveTo(325, 437.5)
+        g.lineTo(425, 462.5)
+        g.moveTo(375, 487.5)
+        g.lineTo(375, 412.5)
         g.closePath();
         g.stroke();
+        
+        let num = Math.round(Math.random());
+        if (num == 0)
+        {
+            console.log(num);
+            h.beginPath();
+            h.fillStyle = "yellow";
+            h.moveTo(325, 400);
+            h.lineTo(325, 437.5);
+            h.lineTo(375, 450);
+            h.lineTo(375, 412.5);
+            h.closePath();
+            h.stroke();
+            h.fill();   
+            h.beginPath();
+            h.moveTo(325, 437.5);
+            h.lineTo(325, 475);
+            h.lineTo(375, 487.5);
+            h.lineTo(375, 450);
+            h.closePath();
+            h.stroke();
+            h.fill();
+            h.beginPath();
+            h.moveTo(375, 487.5);
+            h.lineTo(425, 500);
+            h.lineTo(425, 462.5);
+            h.lineTo(375, 450);
+            h.closePath();
+            h.stroke();
+            h.fill();
+            h.beginPath();
+            h.moveTo(375, 450);
+            h.lineTo(425, 462.5);
+            h.lineTo(425, 425);
+            h.lineTo(375, 412.5);
+            h.closePath();
+            h.stroke();
+            h.fill();
+        }
+        else
+        {
+            console.log(num);
+        }
+
     }
 }
 
