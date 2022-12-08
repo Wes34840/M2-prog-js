@@ -2,8 +2,11 @@ class App
 {
     runApplication()
     {  
-        this.tekenHuis(600, 100)
-        this.tekenKerstboom(200, 500, 10);  
+        let posX = this.randInt(300, 1000);
+        let posY = this.randInt(0, 700);
+        let balls = Math.floor(Math.random() * 10) + 1;
+        console.log(posX, posY, balls);
+        this.tekenHuis(posX, posY, balls);
     }
     
     tekenKerstboom(x, y, Aantal)
@@ -12,25 +15,25 @@ class App
         let ctx = canvas.getContext("2d");
         ctx.fillStyle = "#80461B";
         ctx.beginPath();
-        ctx.moveTo(x, y);
-        ctx.lineTo(x, y + 150);
-        ctx.lineTo(x + 100, y + 150);
-        ctx.lineTo(x + 100, y);
+        ctx.moveTo(x - 265, y + 350);
+        ctx.lineTo(x - 265, y + 400); // 310, 350
+        ctx.lineTo(x - 225, y + 400);
+        ctx.lineTo(x - 225, y + 350);
         ctx.closePath();
         ctx.stroke();
         ctx.fill();
         ctx.beginPath();
         ctx.fillStyle = "#355E3B";
-        ctx.moveTo(x - 125, y); //a
-        ctx.lineTo(x + 50, y - 375); //b
-        ctx.lineTo(x + 225, y); //c
+        ctx.moveTo(x - 300, y + 350); //a 250, 300
+        ctx.lineTo(x - 245, y + 150); //b 325, 100
+        ctx.lineTo(x - 190, y + 350); //c 400, 300
         ctx.closePath();
         ctx.stroke();
         ctx.fill();
         ctx.beginPath();
-        ctx.moveTo(x + 35, y - 350);
-        ctx.lineTo(x + 50, y - 395);
-        ctx.lineTo(x + 65, y - 350);
+        ctx.moveTo(x - 254, y + 175); // 313, 125
+        ctx.lineTo(x - 245, y + 140); //325, 90
+        ctx.lineTo(x - 235, y + 175); // 338, 125
         ctx.closePath();
         ctx.stroke();
         ctx.fillStyle = "Gold";
@@ -38,15 +41,15 @@ class App
         ctx.fillStyle = "red";
         for (let i = 0; i < Aantal;)
         {
-            let a = this.randInt(x - 125, x + 225);
-            let b = this.randInt(y, y - 375);
-            let z = this.isInside(x - 125, y, x + 50, y - 375, x + 225, y, a, b)
+            let a = this.randInt(x - 310, x - 200);
+            let b = this.randInt(y + 185, y + 340);
+            let z = this.isInside(x - 300, y + 350, x - 245, y + 150, x - 190, y + 350, a, b)
             console.log(a, b, z);
             if (z == true){
                 this.tekenCirkel(a, b);
-                i++;
-            }
+                i++ 
             //done with this until I find out how to make the circles not be drawn inside of eachother
+            }
         }
     }
     tekenCirkel(a, b)
@@ -55,12 +58,12 @@ class App
         let ctx = canvas.getContext("2d");
         ctx.fillStyle = "red";
         ctx.beginPath();
-        ctx.arc(a, b, 20, 0, Math.PI*2);
+        ctx.arc(a, b, 7, 0, Math.PI*2);
         ctx.stroke();
         ctx.fill();
         ctx.closePath();
     }
-    tekenHuis(x, y)
+    tekenHuis(x, y, Aantal)
     {
         console.log("hello world");
         //haha code go brrr
@@ -135,10 +138,7 @@ class App
             ctx.stroke();
             ctx.fill();
         }
-        else
-        {
-            console.log(num);
-        }
+        this.tekenKerstboom(x, y, 10)
 
     }
     area(x1, y1, x2, y2, x3, y3)
