@@ -8,7 +8,6 @@ class App
     }
     runApplication()
     {
-        console.log(this.name)
         let dino1 = new Dino(this.name[0], this.carnivore[0], this.age[0]);
         console.log(dino1);
 
