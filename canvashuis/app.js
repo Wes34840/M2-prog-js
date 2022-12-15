@@ -1,39 +1,42 @@
 class App
 {
     runApplication()
-    {  
+    {   
         let posX = this.randInt(300, 1000);
         let posY = this.randInt(0, 700);
         let balls = Math.floor(Math.random() * 10) + 1;
         console.log(posX, posY, balls);
-        this.tekenHuis(posX, posY, balls);
+        for (let i = 0; i < 10; i++){
+            let posX = this.randInt(300, 1000);
+            let posY = this.randInt(0, 700);
+            this.tekenHuis(posX, posY, balls)
+        }
     }
-    
     tekenKerstboom(x, y, Aantal)
     {
         let canvas = document.getElementById("canvasId");
         let ctx = canvas.getContext("2d");
         ctx.fillStyle = "#80461B";
         ctx.beginPath();
-        ctx.moveTo(x - 265, y + 350);
-        ctx.lineTo(x - 265, y + 400); // 310, 350
-        ctx.lineTo(x - 225, y + 400);
-        ctx.lineTo(x - 225, y + 350);
+        ctx.moveTo(x - 26.5, y + 35);
+        ctx.lineTo(x - 26.5, y + 40); // 310, 350
+        ctx.lineTo(x - 22.5, y + 40);
+        ctx.lineTo(x - 22.5, y + 35);
         ctx.closePath();
         ctx.stroke();
         ctx.fill();
         ctx.beginPath();
         ctx.fillStyle = "#355E3B";
-        ctx.moveTo(x - 300, y + 350); //a 250, 300
-        ctx.lineTo(x - 245, y + 150); //b 325, 100
-        ctx.lineTo(x - 190, y + 350); //c 400, 300
+        ctx.moveTo(x - 30, y + 35); //a 250, 300
+        ctx.lineTo(x - 24.5, y + 15); //b 325, 100
+        ctx.lineTo(x - 19, y + 35); //c 400, 300
         ctx.closePath();
         ctx.stroke();
         ctx.fill();
         ctx.beginPath();
-        ctx.moveTo(x - 254, y + 175); // 313, 125
-        ctx.lineTo(x - 245, y + 140); //325, 90
-        ctx.lineTo(x - 235, y + 175); // 338, 125
+        ctx.moveTo(x - 25.4, y + 17.5); // 313, 125
+        ctx.lineTo(x - 24.5, y + 14); //325, 90
+        ctx.lineTo(x - 23.5, y + 17.5); // 338, 125
         ctx.closePath();
         ctx.stroke();
         ctx.fillStyle = "Gold";
@@ -41,9 +44,9 @@ class App
         ctx.fillStyle = "red";
         for (let i = 0; i < Aantal;)
         {
-            let a = this.randInt(x - 310, x - 200);
-            let b = this.randInt(y + 185, y + 340);
-            let z = this.isInside(x - 300, y + 350, x - 245, y + 150, x - 190, y + 350, a, b)
+            let a = this.randInt(x - 31, x - 20);
+            let b = this.randInt(y + 18.5, y + 34);
+            let z = this.isInside(x - 30, y + 35, x - 24.5, y + 15, x - 19, y + 35, a, b)
             console.log(a, b, z);
             if (z == true){
                 this.tekenCirkel(a, b);
@@ -58,7 +61,7 @@ class App
         let ctx = canvas.getContext("2d");
         ctx.fillStyle = "red";
         ctx.beginPath();
-        ctx.arc(a, b, 7, 0, Math.PI*2);
+        ctx.arc(a, b, 1.5, 0, Math.PI*2);
         ctx.stroke();
         ctx.fill();
         ctx.closePath();
@@ -72,31 +75,31 @@ class App
         ctx.beginPath();
         ctx.fillStyle = "red";
         ctx.moveTo(x, y); 
-        ctx.lineTo(x+400, y+100);
-        ctx.lineTo(x+300, y+300);
-        ctx.lineTo(x-100, y+200);
+        ctx.lineTo(x+40, y+10);
+        ctx.lineTo(x+30, y+30);
+        ctx.lineTo(x-10, y+20);
         ctx.closePath();
         ctx.fill();
-        ctx.moveTo(x-100, y+200);
-        ctx.lineTo(x-100, y+400); 
-        ctx.lineTo(x+300, y+500); 
-        ctx.lineTo(x+300, y+300);
-        ctx.lineTo(x-100, y+200);
-        ctx.moveTo(x+300, y+500);
-        ctx.lineTo(x+500, y+400);
-        ctx.lineTo(x+500, y+200);
-        ctx.lineTo(x+400, y+100);
-        ctx.lineTo(x+300, y+300);
-        ctx.lineTo(x+500, y+200);
-        ctx.moveTo(x+25, y+300);
-        ctx.lineTo(x+25, y+375);
-        ctx.lineTo(x+125, y+400);
-        ctx.lineTo(x+125, y+325);
-        ctx.lineTo(x+25, y+300);
-        ctx.moveTo(x+25, y+337.5)
-        ctx.lineTo(x+125, y+362.5)
-        ctx.moveTo(x+75, y+387.5)
-        ctx.lineTo(x+75, y+312.5)
+        ctx.moveTo(x-10, y+20);
+        ctx.lineTo(x-10, y+40); 
+        ctx.lineTo(x+30, y+50); 
+        ctx.lineTo(x+30, y+30);
+        ctx.lineTo(x-10, y+20);
+        ctx.moveTo(x+30, y+50);
+        ctx.lineTo(x+50, y+40);
+        ctx.lineTo(x+50, y+20);
+        ctx.lineTo(x+40, y+10);
+        ctx.lineTo(x+30, y+30);
+        ctx.lineTo(x+50, y+20);
+        ctx.moveTo(x+2.5, y+30);
+        ctx.lineTo(x+2.5, y+37.5);
+        ctx.lineTo(x+12.5, y+40);
+        ctx.lineTo(x+12.5, y+32.5);
+        ctx.lineTo(x+2.5, y+30);
+        ctx.moveTo(x+2.5, y+33.75)
+        ctx.lineTo(x+12.5, y+36.25)
+        ctx.moveTo(x+7.5, y+38.75)
+        ctx.lineTo(x+7.5, y+31.25)
         ctx.closePath();
         ctx.stroke();
         
@@ -106,39 +109,39 @@ class App
             console.log(num);
             ctx.beginPath();
             ctx.fillStyle = "yellow";
-            ctx.moveTo(x+25, y+300);
-            ctx.lineTo(x+25, y+337.5);
-            ctx.lineTo(x+75, y+350);
-            ctx.lineTo(x+75, y+312.5);
+            ctx.moveTo(x+2.5, y+30);
+            ctx.lineTo(x+2.5, y+33.75);
+            ctx.lineTo(x+7.5, y+35);
+            ctx.lineTo(x+7.5, y+31.25);
             ctx.closePath();
             ctx.stroke();
             ctx.fill();   
             ctx.beginPath();
-            ctx.moveTo(x+25, y+337.5);
-            ctx.lineTo(x+25, y+375);
-            ctx.lineTo(x+75, y+387.5);
-            ctx.lineTo(x+75, y+350);
+            ctx.moveTo(x+2.5, y+33.75);
+            ctx.lineTo(x+2.5, y+37.5);
+            ctx.lineTo(x+7.5, y+38.75);
+            ctx.lineTo(x+7.5, y+35);
             ctx.closePath();
             ctx.stroke();
             ctx.fill();
             ctx.beginPath();
-            ctx.moveTo(x+75, y+387.5);
-            ctx.lineTo(x+125, y+400);
-            ctx.lineTo(x+125, y+362.5);
-            ctx.lineTo(x+75, y+350);
+            ctx.moveTo(x+7.5, y+38.75);
+            ctx.lineTo(x+12.5, y+40);
+            ctx.lineTo(x+12.5, y+36.25);
+            ctx.lineTo(x+7.5, y+35);
             ctx.closePath();
             ctx.stroke();
             ctx.fill();
             ctx.beginPath();
-            ctx.moveTo(x+75, y+350);
-            ctx.lineTo(x+125, y+362.5);
-            ctx.lineTo(x+125, y+325);
-            ctx.lineTo(x+75, y+312.5);
+            ctx.moveTo(x+7.5, y+35);
+            ctx.lineTo(x+12.5, y+36.25);
+            ctx.lineTo(x+12.5, y+32.5);
+            ctx.lineTo(x+7.5, y+31.25);
             ctx.closePath();
             ctx.stroke();
             ctx.fill();
         }
-        this.tekenKerstboom(x, y, 10)
+        this.tekenKerstboom(x, y, Aantal)
 
     }
     area(x1, y1, x2, y2, x3, y3)
@@ -156,6 +159,12 @@ class App
     randInt(min, max) 
     {
         return Math.floor(Math.random() * (max - min) ) + min;
+    }
+    isBiggerThan(position){
+        return position > posX + 100
+    }
+    isSmallerThan(position){
+        return position < posX - 100
     }
 }
 
