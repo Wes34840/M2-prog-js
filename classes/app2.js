@@ -42,11 +42,11 @@ class Dino
         this.hunger = true;
     }
     eetDino(dino2){
-        console.log(this.name + "eet de dino " + dino2.name + " op.")
+        console.log(this.name + " eet de dino " + dino2.name + " op.")
         dino2.leeft = false;
     }
     eetPlant(plant){
-        console.log(this.name + "eet de plant " + plant.name + " op.")
+        console.log(this.name + " eet de plant " + plant.name + " op.")
         plant.leeft = false;
     }
 }
