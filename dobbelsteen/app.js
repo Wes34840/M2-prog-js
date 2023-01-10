@@ -25,11 +25,11 @@ class App
         let intelligence = document.getElementById("Intelligence")
         let charisma = document.getElementById("Charisma")
         strength.textContent = "strength = " + str;
-        dexterity.textContent = "strength = " + dex;
-        constitution.textContent = "strength = " + con;
-        wisdom.textContent = "strength = " + wis;
-        intelligence.textContent = "strength = " + int;
-        charisma.textContent = "strength = " + cha;  
+        dexterity.textContent = "dexterity = " + dex;
+        constitution.textContent = "constitution = " + con;
+        wisdom.textContent = "wisdom = " + wis;
+        intelligence.textContent = "intelligence = " + int;
+        charisma.textContent = "charisma = " + cha;  
     }
     rollNew(){
         let str = this.rollStat();
